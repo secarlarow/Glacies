@@ -1,0 +1,204 @@
+:root {
+  --background-color    : #4e6d8b;
+  --border-color        : #7591AD;
+  --nav-background-color: #34495e;
+  --text-color          : #34495e;
+  --color1              : #EC3E27;
+  --color2              : #fd79a8;
+  --color3              : #0984e3;
+  --color4              : #00b894;
+  --color5              : #fdcb6e;
+  --color6              : #e056fd;
+  --color7              : #F97F51;
+  --color8              : #BDC581;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  scroll-behavior: smooth; /* 实现平滑滚动 */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+  overflow: hidden; /* 确保没有滚动条 */
+  background-color: #191933;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  transition: background-color 0.5s, opacity 0.5s; /* 添加 opacity 过渡 */
+  opacity: 0; /* 初始状态透明 */
+}
+
+.section.active {
+  opacity: 1; /* 使当前活动页面完全不透明 */
+}
+
+#section1 {
+  background-color: lightcoral; 
+}
+
+#section2 { 
+  background-color: lightseagreen; 
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  width: 1000px;
+  height: 50px;
+  background-color: var(--nav-background-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+nav.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+nav a {
+  position: relative;
+  display: block;
+  float: left;
+  font-size: 15px;
+  line-height: 50px;
+  height: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  z-index: 10;
+}
+
+nav a:nth-child(1) {
+  width: 200px;
+}
+
+nav a:nth-child(2) {
+  width: 200px;
+}
+
+nav a:nth-child(3) {
+  width: 200px;
+}
+
+nav a:nth-child(4) {
+  width: 200px;
+}
+
+nav a:nth-child(5) {
+  width: 200px;
+}
+
+nav .animation {
+  position: absolute;
+  height: 100%;
+  background-color: #191933;
+  z-index: 9;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.start-首页,
+nav a:nth-child(1):hover~.animation {
+  width: 200px;
+  left: 0px;
+}
+
+.start-动画企划,
+nav a:nth-child(2):hover~.animation {
+  width: 200px;
+  left: 200px;
+}
+
+.start-Galgame企划,
+nav a:nth-child(3):hover~.animation {
+  width: 200px;
+  left: 400px;
+}
+
+.start-Vtuber企划,
+nav a:nth-child(4):hover~.animation {
+  width: 200px;
+  left: 600px;
+}
+
+.start-周边,
+nav a:nth-child(5):hover~.animation {
+  width: 200px;
+  left: 800px;
+}
+
+.start-首页,
+nav a:nth-child(1):focus~.animation {
+  width: 200px;
+  left: 0px;
+}
+
+.start-动画企划,
+nav a:nth-child(2):focus~.animation {
+  width: 200px;
+  left: 200px;
+}
+
+.start-Galgame企划,
+nav a:nth-child(3):focus~.animation {
+  width: 200px;
+  left: 400px;
+}
+
+.start-Vtuber企划,
+nav a:nth-child(4):focus~.animation {
+  width: 200px;
+  left: 600px;
+}
+
+.start-周边,
+nav a:nth-child(5):focus~.animation {
+  width: 200px;
+  left: 800px;
+}
+
+.parallax {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
